@@ -1,0 +1,15 @@
+<div
+  class="error"
+  *ngIf="field.errors && (field.dirty || field.touched || formSubmitted)"
+>
+  <span *ngIf="field.hasError('required')"> {{ label }} is required. </span>
+  <span *ngIf="field.hasError('pattern')">
+    First 2 characters should be Alphabets, rest can be Alph numeric & no special character allowed.
+  </span>
+  <span *ngIf="field.hasError('minlength')">
+    Minimum {{ field.errors["minlength"]?.requiredLength }} char is required.
+  </span>
+  <span *ngIf="field.hasError('maxlength')">
+    Maxium {{ field.errors["maxlength"]?.requiredLength }} Char is allowed.
+  </span>
+</div>

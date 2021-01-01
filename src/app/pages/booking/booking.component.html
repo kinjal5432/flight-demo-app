@@ -1,0 +1,33 @@
+<div class="booking" *ngIf="form">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-control">
+      <label for="name">Passenger Name</label>
+      <input type="text" formControlName="passengerName" />
+      <app-form-field-error
+        [field]="form?.get('passengerName')"
+        label="Passenger Name"
+        [formSubmitted]="formSubmitted"
+      ></app-form-field-error>
+    </div>
+    <div class="form-control">
+      <label for="name">No. of Tickets</label>
+      <input type="number" formControlName="ticketCount" />
+      <app-form-field-error
+        [field]="form?.get('ticketCount')"
+        label="No. of Tickets"
+        [formSubmitted]="formSubmitted"
+      ></app-form-field-error>
+    </div>
+    <div class="form-control">
+      <label for="name">Flight Id</label>
+      <input type="text" formControlName="bookingId" />
+      <app-form-field-error
+        [field]="form?.get('bookingId')"
+        label="Flight Id"
+        [formSubmitted]="formSubmitted"
+      ></app-form-field-error>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

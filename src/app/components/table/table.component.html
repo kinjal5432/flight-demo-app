@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="table-heading">
+    <span class="heading">
+      {{ heading }}
+    </span>
+    <span class="space"></span>
+    <span class="count right"> Total Records: {{ rows.length }} </span>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns">{{ column.label }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td
+          *ngFor="let column of columns"
+          (click)="onRowClick(row, column.key)"
+        >
+          <div [innerHTML]="cellHtml(row, column)"></div>
+        </td>
+      </tr>
+      <tr *ngIf="!rows?.length">
+        <td colspan="5">No Record found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,14 @@
+<div class="flight-details">
+  <app-table
+    [columns]="columns"
+    [rows]="storageRows"
+    heading="From Storage"
+    (rowClickHandler)="rowClick($event, 'storage')"
+  ></app-table>
+  <app-table
+    [columns]="columns"
+    [rows]="jsonRows"
+    heading="From JSON"
+    (rowClickHandler)="rowClick($event, 'json')"
+  ></app-table>
+</div>
